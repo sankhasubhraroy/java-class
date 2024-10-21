@@ -1,4 +1,4 @@
-public class BigInt {
+public class Class_12_10_2024 {
     public static int[] newBigInt(String s, int digitsPerIndex) {
         // Precondition: digitsPerIndex should be >= 1
         // Precondition: s should be all numerals, no spaces, negative signs, decimal pts.

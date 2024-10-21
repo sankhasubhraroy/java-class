@@ -1,4 +1,4 @@
-public class Main {
+public class Class_05_10_2024 {
     public static void main(String[] args) {
         // This is the main() function.
         // You can run test code here.

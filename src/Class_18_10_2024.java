@@ -1,4 +1,15 @@
-public class StringManipulation {
+public class Class_18_10_2024 {
+    public static void main(String[] args) {
+        String str = "this is an example. example of some string manipulations. it's below";
+        System.out.println("Number of space " + spaceCount(str));
+        System.out.println("Number of vowels " + vowelCount(str));
+        System.out.println("No of time (a) is there " + letterCount(str, "a"));
+        System.out.println("(Before pa) " + beforeString(str, "pa"));
+        System.out.println("(After pa) " + afterString(str, "pa"));
+        System.out.println("Capitalizing it " + capFirstWord(str));
+        System.out.println("4th occurrence of a is " + fourthIndexOf(str, "a"));
+    }
+
     public static int spaceCount(String s) {
         int count = 0;
 
@@ -102,16 +113,5 @@ public class StringManipulation {
         }
 
         return index;
-    }
-
-    public static void main(String[] args) {
-        String str = "this is an example. example of some string manipulations. it's below";
-        System.out.println("Number of space " + spaceCount(str));
-        System.out.println("Number of vowels " + vowelCount(str));
-        System.out.println("No of time (a) is there " + letterCount(str, "a"));
-        System.out.println("(Before pa) " + beforeString(str, "pa"));
-        System.out.println("(After pa) " + afterString(str, "pa"));
-        System.out.println("Capitalizing it " + capFirstWord(str));
-        System.out.println("4th occurrence of a is " + fourthIndexOf(str, "a"));
     }
 }
