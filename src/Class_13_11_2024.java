@@ -6,6 +6,10 @@ public class Class_13_11_2024 {
         System.out.println("The reverse of Hello is: " + reverse("Hello"));
         System.out.println("The pigLatin version of Hello is: " + pigLatin("Hello"));
         System.out.println("The number of pascal's triangle is: " + pascal(5, 2));
+        System.out.println("The number of ways to reach 5 steps is: " + steps3(5));
+
+        int[] stepsArray = {1, 2, 3};
+        System.out.println("The number of ways to reach 5 steps with 1, 2, 3 possible ways is: " + steps(5, stepsArray));
     }
 
     public static int foo(int x) {
@@ -77,6 +81,30 @@ public class Class_13_11_2024 {
             return 1;   // Base case (Edges of pascal's triangle is 1)
         } else {
             return pascal(row - 1, col - 1) + pascal(row - 1, col);
+        }
+    }
+
+    public static int steps3(int n) {
+        if (n == 0) {
+            return 1; // Base case: 1 way to stay at the ground level
+        } else if (n < 0) {
+            return 0; // No ways if steps go below 0
+        } else {
+            return steps3(n - 1) + steps3(n - 2) + steps3(n - 3); // Sum of ways for 1, 2, or 3 steps
+        }
+    }
+
+    public static int steps(int n, int[] stepsArray) {
+        if (n == 0) {
+            return 1; // Base case: 1 way to stay at the ground level
+        } else if (n < 0) {
+            return 0; // No ways if steps go below 0
+        } else {
+            int totalWays = 0;
+            for (int step : stepsArray) {
+                totalWays += steps(n - step, stepsArray); // Call for each possible step size
+            }
+            return totalWays;
         }
     }
 }
